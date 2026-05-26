@@ -1,13 +1,21 @@
 def welcometogames():
-    print("Hi what is your name: ")
+    name=input("Hi what is your name: ")
+    print("welcome",name)
+    return name
 def getip():
     import socket
     hostnamed = socket.gethostname()
     local_ipd = socket.gethostbyname(hostnamed)
     return local_ipd
-#def rpswithtwist():
+def rpswithtwist():
+    import numpy as np
+    print("generating choice...")
     
-def XO():
+    
+def XO(usernumb):
+  
+  game="tic tac toe"
+  print("welcome",usernumb,"to",game)
   import numpy as np
             # Online Python compiler (interpreter) to run Python online.
             # Write Python 3 code in this online editor and run it.
@@ -2437,12 +2445,12 @@ def XO():
   print("O points: ",scoreO)  
   ans=input("Do you want to keep playing:")   
   
-  return scoreX,scoreO,"tic tac toe",ans
+  return scoreX,scoreO,game,ans
 def games():
     import socket
     hostname = socket.gethostname()
     local_ip = socket.gethostbyname(hostname)
-   
+    usernum=welcometogames()
     while(getip()!=local_ip):
         ans=input("Are you the same person playing this game?")
         if(ans=="no"):
@@ -2453,12 +2461,12 @@ def games():
     u=input("What game do you want to play? ")
     j=0
     while(u=="tic tac toe"):
-        j=XO()
+        j=XO(usernum)
         #print(j)
-        print(j[2],"O scored",j[1],"points","X scored",j[0],"points")
+        
         if(j[3]=='no'):
             break
-    return j
+    return usernum,j[0]-j[1]
 
     #while(u=="rock paper scizors with a twist"):
         
@@ -2468,6 +2476,7 @@ def games():
         return 0  
 while(0==0):        
     a=games()
+    print("User",a[0],"Points:",a[1])
     if(a==0):
         break
     
