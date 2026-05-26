@@ -7,11 +7,15 @@ def getip():
     hostnamed = socket.gethostname()
     local_ipd = socket.gethostbyname(hostnamed)
     return local_ipd
-def rpswithtwist():
+def rpswithtwist(o,f,usernum):
     import numpy as np
-    print("generating choice...")
-    
-    
+    picks=["rock","paper","scizors","God"]
+    prob=(1-f)/3
+    probb=(1-o)/3
+    weights=[prob,prob,prob,o]
+    weightsa=[probb,probb,probb,o]
+    computer=
+    you=
 def XO(usernumb):
   
   game="tic tac toe"
