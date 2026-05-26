@@ -2495,7 +2495,8 @@ def games(k):
     #while(u=="word guessing"):
             
     if(u!="tic tac toe" and u!="rock paper scissors" and "word guessing"):
-        return 0  
+        return 0
+        
 def main(): 
  while(0==0): 
     l=0
