@@ -5,6 +5,8 @@ def getip():
     hostnamed = socket.gethostname()
     local_ipd = socket.gethostbyname(hostnamed)
     return local_ipd
+#def rpswithtwist():
+    
 def XO():
   import numpy as np
             # Online Python compiler (interpreter) to run Python online.
@@ -13,7 +15,7 @@ def XO():
   scoreX=0
         
   if(1==1):
-        
+            import random
             turnorder=int(input("which player should go first X or O type 1 for X and 2 for O: "))
             
             matrixAns_np=np.array([[0, 0, 0],
@@ -46,12 +48,12 @@ def XO():
               elif(turnorder==2):
                   while(1==1):
                   
-                    print("o turn")
-                    usertwo=int(input())
+                    #print("o turn")
+                    usertwo=random.randint(1,9)
             
                     if(userone==usertwo or usertwo>9 and usertwo>0):
-                        print("O pick another number")
-                        usertwo=int(input())
+                        print("processing choice...")
+                        usertwo=random.randint(1,9)
                     if(userone!=usertwo):  
                         turnorder=1
                         break
@@ -515,12 +517,12 @@ def XO():
             
                 elif(turnorder==2):
                     while(1==1):
-                        print("o turn")
-                        usertwo=int(input())
+                        
+                        usertwo=random.randint(1,9)
                 
                         if(userone==usertwo or usertwo>9 or usertwo>0 or usertwo==b or usertwo==a):
-                            print("O pick another number")
                             
+                            print("processing choice...")
             
                 
                         if(userone!=usertwo and usertwo!=a and usertwo!=b):
@@ -982,10 +984,10 @@ def XO():
                 elif(turnorder==2):
                     while(1==1):
                         print("o turns")
-                        usertwo=int(input())
+                        usertwo=random.randint(1,9)
                 
                         if(userone==usertwo or usertwo>9 or usertwo>0 or usertwo==b or usertwo==a or usertwo==c or usertwo==d):
-                            print("O pick another number")
+                            print("processing choice...")
                             
             
                 
@@ -1447,11 +1449,11 @@ def XO():
                   
                 elif(turnorder==2):
                     while(1==1):
-                        print("o turn")
-                        usertwo=int(input())
+                        #print("o turn")
+                        usertwo=random.randint(1,9)
                 
                         if(userone==usertwo or usertwo>9 or usertwo>0 or usertwo==b or usertwo==a or usertwo==c or usertwo==d or usertwo==f or usertwo==e):
-                            print("O pick another number")
+                            print("processing choice...")
                             
             
                 
@@ -2458,9 +2460,9 @@ def games():
             break
     return j
 
-    while(u=="rock paper scizors with a twist"):
+    #while(u=="rock paper scizors with a twist"):
         
-    while(u=="word guessing"):
+    #while(u=="word guessing"):
             
     if(u!="tic tac toe" and u!="rock paper scizors" and "word guessing"):
         return 0  
