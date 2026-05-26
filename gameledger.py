@@ -2460,9 +2460,9 @@ def games():
 
     while(u=="rock paper scizors with a twist"):
         
-    while(u=="search results with data"):
-        
-    if(u!="tic tac toe" and u!="rock paper scizors" and "search results with data"):
+    while(u=="word guessing"):
+            
+    if(u!="tic tac toe" and u!="rock paper scizors" and "word guessing"):
         return 0  
 while(0==0):        
     a=games()
