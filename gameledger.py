@@ -1,3 +1,8 @@
+def defineinstantwinconstant(x):
+    if(x>0):
+        return 2.5*(10**-9)*(10**x)
+    else:
+        return 2.5*(10**-9)
 def welcometogames():
     name=input("Hi what is your name: ")
     print("welcome",name)
@@ -14,8 +19,9 @@ def rpswithtwist(o,f,usernum):
     probb=(1-o)/3
     weights=[prob,prob,prob,o]
     weightsa=[probb,probb,probb,o]
-    computer=
-    you=
+    rock=
+    paper=
+    scizors=
 def XO(usernumb):
   
   game="tic tac toe"
@@ -2450,7 +2456,8 @@ def XO(usernumb):
   ans=input("Do you want to keep playing:")   
   
   return scoreX,scoreO,game,ans
-def games():
+def games(k):
+    
     import socket
     hostname = socket.gethostname()
     local_ip = socket.gethostbyname(hostname)
@@ -2470,17 +2477,30 @@ def games():
         
         if(j[3]=='no'):
             break
+        
+    k=j[0]-j[1]
     return usernum,j[0]-j[1]
 
-    #while(u=="rock paper scizors with a twist"):
-        
+    while(u=="rock paper scizors with a twist"):
+       if(k>0):
+        olp=defineinstantwinconstant(k)
+       if(k<0):
+        olcp=defineinstantwinconstant(abs(k))
+       else:
+        olcp=0
+        olp=0
+       rpswithtwist(olp,olcp,usernum)
     #while(u=="word guessing"):
             
     if(u!="tic tac toe" and u!="rock paper scizors" and "word guessing"):
         return 0  
-while(0==0):        
-    a=games()
+def main(): 
+ while(0==0): 
+    l=0
+    a=games(l)
     print("User",a[0],"Points:",a[1])
     if(a==0):
         break
     
+if __name__ == "__main__":
+    main()
