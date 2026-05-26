@@ -14,14 +14,16 @@ def getip():
     return local_ipd
 def rpswithtwist(o,f,usernum):
     import numpy as np
-    picks=["rock","paper","scizors","God"]
+    picks=["rock","paper","scissors","God"]
     prob=(1-f)/3
     probb=(1-o)/3
     weights=[prob,prob,prob,o]
     weightsa=[probb,probb,probb,o]
-    rock=
-    paper=
-    scizors=
+    Crock=1
+    paper=1
+    scissors=-1
+    Yrock=-1
+    
 def XO(usernumb):
   
   game="tic tac toe"
@@ -2492,7 +2494,7 @@ def games(k):
        rpswithtwist(olp,olcp,usernum)
     #while(u=="word guessing"):
             
-    if(u!="tic tac toe" and u!="rock paper scizors" and "word guessing"):
+    if(u!="tic tac toe" and u!="rock paper scissors" and "word guessing"):
         return 0  
 def main(): 
  while(0==0): 
