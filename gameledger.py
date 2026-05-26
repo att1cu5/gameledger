@@ -2424,4 +2424,9 @@ def gameOne(xc,pointsO,pointsX):
                     scoreX+=1
         print()
         print("X points: ",scoreX)
-        print("O points: ",scoreO)   
+        print("O points: ",scoreO)  
+        
+return scoreX,scoreO,"tic tac toe"
+
+
+
