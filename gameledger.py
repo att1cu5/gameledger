@@ -1,19 +1,18 @@
 def welcometogames():
     print("Hi what is your name: ")
+def getip():
     import socket
-    hostname = socket.gethostname()
-    local_ip = socket.gethostbyname(hostname)
-    return hostname,local_ip
-def games():
-    u=input("What game do you want to play? ")
-    if(u=="tic tac toe"):
-        import numpy as np
+    hostnamed = socket.gethostname()
+    local_ipd = socket.gethostbyname(hostnamed)
+    return local_ipd
+def XO():
+  import numpy as np
             # Online Python compiler (interpreter) to run Python online.
             # Write Python 3 code in this online editor and run it.
-        scoreO=0
-        scoreX=0
+  scoreO=0
+  scoreX=0
         
-        if(1==1):
+  if(1==1):
         
             turnorder=int(input("which player should go first X or O type 1 for X and 2 for O: "))
             
@@ -503,7 +502,7 @@ def games():
             while(1==1):
                 if(turnorder==1):
                     while(1==1):
-                        print("x turns")
+                        print("x turn")
                         userone=int(input())
                 
                         if(userone==usertwo or usertwo>9 or usertwo>0 or userone==b or userone==a):
@@ -516,7 +515,7 @@ def games():
             
                 elif(turnorder==2):
                     while(1==1):
-                        print("o turns")
+                        print("o turn")
                         usertwo=int(input())
                 
                         if(userone==usertwo or usertwo>9 or usertwo>0 or usertwo==b or usertwo==a):
@@ -1435,7 +1434,7 @@ def games():
             while(1==1):
                 if(turnorder==1):
                     while(1==1):
-                        print("x turns")
+                        print("x turn")
                         userone=int(input())
                 
                         if(userone==usertwo or usertwo>9 or usertwo>0 or userone==d or userone==c or userone==a or userone==b or usertwo==f or usertwo==e):
@@ -1448,7 +1447,7 @@ def games():
                   
                 elif(turnorder==2):
                     while(1==1):
-                        print("o turns")
+                        print("o turn")
                         usertwo=int(input())
                 
                         if(userone==usertwo or usertwo>9 or usertwo>0 or usertwo==b or usertwo==a or usertwo==c or usertwo==d or usertwo==f or usertwo==e):
@@ -2431,13 +2430,42 @@ def games():
                     if 9 in Xturns:
                         print("X gains one point")
                         scoreX+=1
-            print()
-            print("X points: ",scoreX)
-            print("O points: ",scoreO)  
-            
-        return scoreX,scoreO,"tic tac toe"
-    #if(xc=="rock paper scizors"):
-        
-a=games()
+  print()
+  print("X points: ",scoreX)
+  print("O points: ",scoreO)  
+  ans=input("Do you want to keep playing:")   
+  
+  return scoreX,scoreO,"tic tac toe",ans
+def games():
+    import socket
+    hostname = socket.gethostname()
+    local_ip = socket.gethostbyname(hostname)
+   
+    while(getip()!=local_ip):
+        ans=input("Are you the same person playing this game?")
+        if(ans=="no"):
+            while(0==0):
+                h=9
+        if(ans=="yes"):
+            break
+    u=input("What game do you want to play? ")
+    j=0
+    while(u=="tic tac toe"):
+        j=XO()
+        #print(j)
+        print(j[2],"O scored",j[1],"points","X scored",j[0],"points")
+        if(j[3]=='no'):
+            break
+    return j
 
-print(a)
+    while(u=="rock paper scizors with a twist"):
+        
+    while(u=="search results with data"):
+        
+    if(u!="tic tac toe" and u!="rock paper scizors" and "search results with data"):
+        return 0  
+while(0==0):        
+    a=games()
+    if(a==0):
+        break
+    
