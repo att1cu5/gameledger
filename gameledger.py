@@ -1,5 +1,21 @@
 def wordgame():
+    import random
     acceptablewords=("axe","are","awe","bad","bag","bed","cry","cue","cup","dad","den","dim","ear","eat","end","fin","fox","fly","guy","got","gym","hot","hox","hug","ice","inn","ivy","job","jab","jug","kid","key","kin","lab","let","lit","mad","mom","mud","nap","new","nut","oak","odd","out","pad","pig","pin","qua","qis","qat","rag","rib","run","sad","she","sin","tab","tie","two","urb","ups","use","van","vet","vow","web","wag","won","xed","xis","yag","yum","yes","zap","zag","zap")
+   
+    guessword=random.choice(acceptablewords)
+    for i in range(0,5):
+        h="guess number "+str(i)+":"
+        theword=input(h)
+       
+        if(theword[0]==guessword[0]):
+            print("-",end=" ")
+        if(theword[1]==guessword[1]):
+            print("-",end=" ")
+        if(theword[2]==guessword[2]):
+            print("-",end=" ")
+        print()
+    if(theword==guessword):
+        
 def defineinstantwinconstant(x):
     if(x>0):
         return 2.5*(10**-5)*(10**x)
@@ -2569,8 +2585,7 @@ def games(k,usernum):
             
             scores[2]=u
             scores[3]=k
-            while(u=="word guessing"):
-                wordgame()
+            wordgame()
             return scores   
             if(u!="tic tac toe" and u!="rps" and "word guessing"):
                 return 0
