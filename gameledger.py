@@ -1,3 +1,5 @@
+def wordgame():
+    acceptablewords=("axe","are","awe","bad","bag","bed","cry","cue","cup","dad","den","dim","ear","eat","end","fin","fox","fly","guy","got","gym","hot","hox","hug","ice","inn","ivy","job","jab","jug","kid","key","kin","lab","let","lit","mad","mom","mud","nap","new","nut","oak","odd","out","pad","pig","pin","qua","qis","qat","rag","rib","run","sad","she","sin","tab","tie","two","urb","ups","use","van","vet","vow","web","wag","won","xed","xis","yag","yum","yes","zap","zag","zap")
 def defineinstantwinconstant(x):
     if(x>0):
         return 2.5*(10**-5)*(10**x)
@@ -16,9 +18,10 @@ def rpswithtwist(o,f,usernum):
     game="rps"
     mk=0
     ml=0
-    loss=0
-    win=0
-    while(1==1):
+
+    score=0
+    while(0==0):
+        
         #print("welcome",usernum,"to",game)
         import numpy as np
         import random
@@ -52,17 +55,24 @@ def rpswithtwist(o,f,usernum):
         print("you choose", picks[mk])
         print("computer choose",  picks[ml])
         if(matrixofprob[mk][ml]<0):
-            loss=matrixofprob[mk][ml]
             print("you lost")
-            k=loss-win
-            break
+            score+=int(matrixofprob[mk][ml])
+            ukl=input("Do you want to play again? ")
+            if(ukl=="no"):
+                    return score,usernum,ukl
+                    break
+        
             
         if(matrixofprob[mk][ml]>0):
             print("you won")
-            win=matrixofprob[mk][ml]
-            k=loss-win
-            break
-    return win,loss,usernum  
+            score+=int(matrixofprob[mk][ml])
+            
+            ukl=input("Do you want to play again? ")
+            if(ukl=="no"):
+                    return score,usernum,ukl 
+                    break
+        
+     
     
 def XO(usernumb):
   
@@ -2499,7 +2509,7 @@ def XO(usernumb):
   
   return scoreX,scoreO,game,ans
 def games(k,usernum):
-    
+    scores=["",0,"",0,"",0]
     import socket
     hostname = socket.gethostname()
     local_ip = socket.gethostbyname(hostname)
@@ -2511,8 +2521,9 @@ def games(k,usernum):
                 h=9
         if(ans=="yes"):
             break
-    while(0==0):
-            u=input("What game do you want to play? ")
+    if(0==0):
+            print("GAME ONE TIC TAC TOE")
+            u="tic tac toe"
             j=0
             hil=0
             done=0
@@ -2525,13 +2536,14 @@ def games(k,usernum):
                 
                 k=j[0]-j[1]
                 hil=2
-            if(hil!=0):
-                donepl=input("are you done playing? ")
-                if(donepl=="yes"):
-                     done=1
-            if(k!=0 or hil!=0 and done==1):
-                return usernum,j[0]-j[1]
-        
+            
+            scores[0]=(u)
+            scores[1]=(j[0]-j[1])
+            #print(usernum,j[0]-j[1])
+            #return usernum,j[0]-j[1]
+            
+            print("GAME TWO ROCK PAPER SCISSORS")
+            u="rps"
             while(u=="rps"):
                 while(0==0):
                    if(k>0):
@@ -2543,32 +2555,33 @@ def games(k,usernum):
                    else:
                     olcp=defineinstantwinconstant(0)
                     olp=defineinstantwinconstant(0)
-                   op=rpswithtwist(olp,olcp,usernum)
-                   k+=op[1]-op[0]
+                   op=rpswithtwist(olcp,olp,usernum)
+                   k+=(int(op[0]))
                    hil=4
-                   if(k!=0 and hil==4):
+                   if(op[2]=='no'):
                        break
-                ukl=input("Do you want to play again? ")
-                if(ukl=="no"):
-                    break     
-            if(hil!=0):
-                   donepl=input("are you done playing? ")
-                   if(donepl=="yes"):
-                      done=1
+                if(k!=0 and hil==4):
+                       break
+                
+                       
+        
                       
-            if(hil!=0 and hil!=2 and hil!=4 or k!=0 and done==1):
-                return usernum,k
-            #while(u=="word guessing"):
-                    
+            
+            scores[2]=u
+            scores[3]=k
+            while(u=="word guessing"):
+                wordgame()
+            return scores   
             if(u!="tic tac toe" and u!="rps" and "word guessing"):
                 return 0
         
 def main(): 
- usernumb=welcometogames()
+ 
  if(0==0): 
+    usernumb=welcometogames()
     l=0
     a=games(l,usernumb)
-    print("User",a[0],"Points:",a[1])
+    print(a)
     
     
 if __name__ == "__main__":
