@@ -1,4 +1,5 @@
 def wordgame():
+    u="word game"
     import random
     acceptablewords=("axe","are","awe","bad","bag","bed","cry","cue","cup","dad","den","dim","ear","eat","end","fin","fox","fly","guy","got","gym","hot","hox","hug","ice","inn","ivy","job","jab","jug","kid","key","kin","lab","let","lit","mad","mom","mud","nap","new","nut","oak","odd","out","pad","pig","pin","qua","qis","qat","rag","rib","run","sad","she","sin","tab","tie","two","urb","ups","use","van","vet","vow","web","wag","won","xed","xis","yag","yum","yes","zap","zag","zap")
    
@@ -21,10 +22,8 @@ def wordgame():
             print(" ",end=" ")
         print()
         if(theword==guessword):
-            
            print("correct")
            break
-        
 def defineinstantwinconstant(x):
     if(x>0):
         return 2.5*(10**-5)*(10**x)
@@ -2610,4 +2609,3 @@ def main():
     
 if __name__ == "__main__":
     main()
-
