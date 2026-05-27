@@ -1,8 +1,8 @@
 def defineinstantwinconstant(x):
     if(x>0):
-        return 2.5*(10**-9)*(10**x)
+        return 2.5*(10**-5)*(10**x)
     else:
-        return 2.5*(10**-9)
+        return 2.5*(10**-5)
 def welcometogames():
     name=input("Hi what is your name: ")
     print("welcome",name)
@@ -13,21 +13,61 @@ def getip():
     local_ipd = socket.gethostbyname(hostnamed)
     return local_ipd
 def rpswithtwist(o,f,usernum):
-    import numpy as np
-    picks=["rock","paper","scissors","God"]
-    prob=(1-f)/3
-    probb=(1-o)/3
-    weights=[prob,prob,prob,o]
-    weightsa=[probb,probb,probb,o]
-    Crock=1
-    paper=1
-    scissors=-1
-    Yrock=-1
+    game="rps"
+    mk=0
+    ml=0
+    loss=0
+    win=0
+    while(1==1):
+        #print("welcome",usernum,"to",game)
+        import numpy as np
+        import random
+        picks=["rock","paper","scissors","God"]
+        prob=(1-f)/3
+        probb=(1-o)/3
+        weights=[prob,prob,prob,o]
+        weightsa=[probb,probb,probb,f]
+        matrixofprob=np.array([[0,-1,1,-1],[1,0,-1,-1],[-1,1,0,-1],[1,1,1,0]])
+        x=random.uniform(0,1)
+        cv=random.uniform(0,1)
+        if(x<prob):
+            mk=0
+        if(x>=prob and x<(prob*2)):
+            mk=1
+        if(x>=(2*prob) and x<(prob*3)):
+            mk=2
+        if(x>(prob*3)):
+            mk=3
+        #print(mk)
+        if(cv<probb):
+            ml=0
+        if(cv>=probb and cv<(probb*2)):
+            ml=1
+        if(cv>=(2*probb) and cv<(probb*3)):
+            ml=2
+        if(cv>(prob*3)):
+            ml=3
+        
+    
+        print("you choose", picks[mk])
+        print("computer choose",  picks[ml])
+        if(matrixofprob[mk][ml]<0):
+            loss=matrixofprob[mk][ml]
+            print("you lost")
+            k=loss-win
+            break
+            
+        if(matrixofprob[mk][ml]>0):
+            print("you won")
+            win=matrixofprob[mk][ml]
+            k=loss-win
+            break
+    return win,loss,usernum  
     
 def XO(usernumb):
   
   game="tic tac toe"
-  print("welcome",usernumb,"to",game)
+  #print("welcome",usernumb,"to",game)
   import numpy as np
             # Online Python compiler (interpreter) to run Python online.
             # Write Python 3 code in this online editor and run it.
@@ -2458,12 +2498,12 @@ def XO(usernumb):
   ans=input("Do you want to keep playing:")   
   
   return scoreX,scoreO,game,ans
-def games(k):
+def games(k,usernum):
     
     import socket
     hostname = socket.gethostname()
     local_ip = socket.gethostbyname(hostname)
-    usernum=welcometogames()
+    
     while(getip()!=local_ip):
         ans=input("Are you the same person playing this game?")
         if(ans=="no"):
@@ -2471,39 +2511,65 @@ def games(k):
                 h=9
         if(ans=="yes"):
             break
-    u=input("What game do you want to play? ")
-    j=0
-    while(u=="tic tac toe"):
-        j=XO(usernum)
-        #print(j)
+    while(0==0):
+            u=input("What game do you want to play? ")
+            j=0
+            hil=0
+            done=0
+            while(u=="tic tac toe"):
+                j=XO(usernum)
+                #print(j)
+                
+                if(j[3]=='no'):
+                    break
+                
+                k=j[0]-j[1]
+                hil=2
+            if(hil!=0):
+                donepl=input("are you done playing? ")
+                if(donepl=="yes"):
+                     done=1
+            if(k!=0 or hil!=0 and done==1):
+                return usernum,j[0]-j[1]
         
-        if(j[3]=='no'):
-            break
-        
-    k=j[0]-j[1]
-    return usernum,j[0]-j[1]
-
-    while(u=="rock paper scizors with a twist"):
-       if(k>0):
-        olp=defineinstantwinconstant(k)
-       if(k<0):
-        olcp=defineinstantwinconstant(abs(k))
-       else:
-        olcp=0
-        olp=0
-       rpswithtwist(olp,olcp,usernum)
-    #while(u=="word guessing"):
-            
-    if(u!="tic tac toe" and u!="rock paper scissors" and "word guessing"):
-        return 0
+            while(u=="rps"):
+                while(0==0):
+                   if(k>0):
+                    olp=defineinstantwinconstant(k)
+                    olcp=defineinstantwinconstant(0)
+                   if(k<0):
+                    olcp=defineinstantwinconstant(abs(k))
+                    olp=defineinstantwinconstant(0)
+                   else:
+                    olcp=defineinstantwinconstant(0)
+                    olp=defineinstantwinconstant(0)
+                   op=rpswithtwist(olp,olcp,usernum)
+                   k+=op[1]-op[0]
+                   hil=4
+                   if(k!=0 and hil==4):
+                       break
+                ukl=input("Do you want to play again? ")
+                if(ukl=="no"):
+                    break     
+            if(hil!=0):
+                   donepl=input("are you done playing? ")
+                   if(donepl=="yes"):
+                      done=1
+                      
+            if(hil!=0 and hil!=2 and hil!=4 or k!=0 and done==1):
+                return usernum,k
+            #while(u=="word guessing"):
+                    
+            if(u!="tic tac toe" and u!="rps" and "word guessing"):
+                return 0
         
 def main(): 
- while(0==0): 
+ usernumb=welcometogames()
+ if(0==0): 
     l=0
-    a=games(l)
+    a=games(l,usernumb)
     print("User",a[0],"Points:",a[1])
-    if(a==0):
-        break
+    
     
 if __name__ == "__main__":
     main()
