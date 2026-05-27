@@ -4,17 +4,26 @@ def wordgame():
    
     guessword=random.choice(acceptablewords)
     for i in range(0,5):
-        h="guess number "+str(i)+":"
+        h="guess number "+str(i+1)+":"
         theword=input(h)
        
         if(theword[0]==guessword[0]):
             print("-",end=" ")
+        if(theword[0]!=guessword[0]):
+            print(" ",end=" ")
         if(theword[1]==guessword[1]):
             print("-",end=" ")
+        if(theword[1]!=guessword[1]):
+            print(" ",end=" ")
         if(theword[2]==guessword[2]):
             print("-",end=" ")
+        if(theword[2]!=guessword[2]):
+            print(" ",end=" ")
         print()
-    if(theword==guessword):
+        if(theword==guessword):
+            
+           print("correct")
+           break
         
 def defineinstantwinconstant(x):
     if(x>0):
