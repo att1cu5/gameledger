@@ -10,15 +10,22 @@ def wordgame():
        
         if(theword[0]==guessword[0]):
             print("-",end=" ")
-        if(theword[0]!=guessword[0]):
+        if(theword[0]!=guessword[0] and theword[0] in guessword):
+            print("X",end=" ")
+        elif(theword[0]!=guessword[0]):
             print(" ",end=" ")
         if(theword[1]==guessword[1]):
             print("-",end=" ")
-        if(theword[1]!=guessword[1]):
+        if(theword[1]!=guessword[1] and theword[1] in guessword):
+            print("X",end=" ")
+        elif(theword[1]!=guessword[1]):
+            guessword[1]):
             print(" ",end=" ")
         if(theword[2]==guessword[2]):
             print("-",end=" ")
-        if(theword[2]!=guessword[2]):
+        if(theword[2]!=guessword[2] and theword[2] in guessword):
+            print("X",end=" ")
+        elif(theword[2]!=guessword[2]):
             print(" ",end=" ")
         print()
         if(theword==guessword):
