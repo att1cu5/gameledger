@@ -1,41 +1,66 @@
 def wordgame():
     u="word game"
+    points=0
     import random
     acceptablewords=("axe","are","awe","bad","bag","bed","cry","cue","cup","dad","den","dim","ear","eat","end","fin","fox","fly","guy","got","gym","hot","hox","hug","ice","inn","ivy","job","jab","jug","kid","key","kin","lab","let","lit","mad","mom","mud","nap","new","nut","oak","odd","out","pad","pig","pin","qua","qis","qat","rag","rib","run","sad","she","sin","tab","tie","two","urb","ups","use","van","vet","vow","web","wag","won","xed","xis","yag","yum","yes","zap","zag","zap")
    
     guessword=random.choice(acceptablewords)
-    for i in range(0,5):
-        h="guess number "+str(i+1)+":"
-        theword=input(h)
-       
-        if(theword[0]==guessword[0]):
-            print("-",end=" ")
-        if(theword[0]!=guessword[0] and theword[0] in guessword):
-            print("X",end=" ")
-        elif(theword[0]!=guessword[0]):
-            print(" ",end=" ")
-        if(theword[1]==guessword[1]):
-            print("-",end=" ")
-        if(theword[1]!=guessword[1] and theword[1] in guessword):
-            print("X",end=" ")
-        elif(theword[1]!=guessword[1]):
-            guessword[1]):
-            print(" ",end=" ")
-        if(theword[2]==guessword[2]):
-            print("-",end=" ")
-        if(theword[2]!=guessword[2] and theword[2] in guessword):
-            print("X",end=" ")
-        elif(theword[2]!=guessword[2]):
-            print(" ",end=" ")
-        print()
+    while(0==0):
+        for i in range(0,5):
+            h="guess number "+str(i+1)+":"
+            while(0==0):
+                theword=input(h)
+                if(len(theword)!=3):
+                    print("invalid length")
+                else:    
+                    if(theword in acceptablewords):
+                        break
+                    else:
+                        print("word not on list")
+            if(theword[0]==guessword[0]):
+                print("-",end=" ")
+            if(theword[0]!=guessword[0] and theword[0] in guessword):
+                print("X",end=" ")
+            elif(theword[0]!=guessword[0]):
+                print(" ",end=" ")
+            if(theword[1]==guessword[1]):
+                print("-",end=" ")
+            if(theword[1]!=guessword[1] and theword[1] in guessword):
+                print("X",end=" ")
+            elif(theword[1]!=guessword[1]):
+                print(" ",end=" ")
+            if(theword[2]==guessword[2]):
+                print("-",end=" ")
+            if(theword[2]!=guessword[2] and theword[2] in guessword):
+                print("X",end=" ")
+            elif(theword[2]!=guessword[2]):
+                print(" ",end=" ")
+            if(theword==guessword):
+                break
+            print()
+        
+            
         if(theword==guessword):
-           print("correct")
-           break
+               print()
+               print("correct")
+               points+=1
+               us=input("Do you want to play again? ")
+               if(us=="no"):
+                return u,points,us
+                break
+        else:
+               print()
+               print("incorrect")
+               points-=1
+               us=input("Do you want to play again? ")
+               if(us=="no"):
+                return u,points,us
+                break
 def defineinstantwinconstant(x):
     if(x>0):
-        return 2.5*(10**-5)*(10**x)
+        return 2.5*(10**-8)*(10**x)
     else:
-        return 2.5*(10**-5)
+        return 2.5*(10**-8)
 def welcometogames():
     name=input("Hi what is your name: ")
     print("welcome",name)
@@ -2536,7 +2561,7 @@ def XO(usernumb):
   print()
   print("X points: ",scoreX)
   print("O points: ",scoreO)  
-  ans=input("Do you want to keep playing:")   
+  ans=input("Do you want to keep playing? ")   
   
   return scoreX,scoreO,game,ans
 def games(k,usernum):
@@ -2565,7 +2590,7 @@ def games(k,usernum):
                 if(j[3]=='no'):
                     break
                 
-                k=j[0]-j[1]
+                k+=j[0]-j[1]
                 hil=2
             
             scores[0]=(u)
@@ -2575,43 +2600,63 @@ def games(k,usernum):
             
             print("GAME TWO ROCK PAPER SCISSORS")
             u="rps"
+            score=0
             while(u=="rps"):
                 while(0==0):
-                   if(k>0):
-                    olp=defineinstantwinconstant(k)
+                   if(score>0):
+                    olp=defineinstantwinconstant(score)
                     olcp=defineinstantwinconstant(0)
-                   if(k<0):
-                    olcp=defineinstantwinconstant(abs(k))
+                   if(score<0):
+                    olcp=defineinstantwinconstant(abs(score))
                     olp=defineinstantwinconstant(0)
                    else:
                     olcp=defineinstantwinconstant(0)
                     olp=defineinstantwinconstant(0)
                    op=rpswithtwist(olcp,olp,usernum)
-                   k+=(int(op[0]))
+                   score+=(int(op[0]))
                    hil=4
                    if(op[2]=='no'):
                        break
-                if(k!=0 and hil==4):
+                if(score!=0 and hil==4):
                        break
-                
+            scores[2]=u
+            scores[3]=score
+            print("GAME THREE WORD GAME")
+            u="word game"
+            kol=0
+            lope=0
+            while(u=="word game" and lope==0):
+                if(0==0):
+                   iop=wordgame()
+                   kol+=iop[1]
+                   
+                   if(iop[2]=="no"):
+                       lope=1
+                   
+
                        
         
                       
             
-            scores[2]=u
-            scores[3]=k
-            wordgame()
+            
+            scores[4]=u
+            scores[5]=kol
+            
             return scores   
-            if(u!="tic tac toe" and u!="rps" and "word guessing"):
-                return 0
         
 def main(): 
  
- if(0==0): 
+ if(0==0):
+    gameA=0
+    gameB=0
+    gameC=0
     usernumb=welcometogames()
     l=0
     a=games(l,usernumb)
-    print(a)
+    
+    print(a[0]+" score is: ",gameA+a[1])
+    print(a[2]+" score is: ",gameB+a[3])
+    print(a[4]+" score is: ",gameC+a[5])
     
     
 if __name__ == "__main__":
